@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap");
+
+:root 
+{
+    --fs-main-topic: 1.75rem;
+    --fs-current-topic: 1.5rem;
+    --fs-nav-links: 1rem;
+    --fs-body: 0.875rem;
+
+    --font-body-color: hsl(220, 26%, 14%, 0.9);
+    --font-heading-color: hsl(220, 26%, 14%);
+
+    --accent-color-first: hsl(230, 21%, 11%, 0.3);
+    --accent-color-second: hsl(230, 21%, 11%, 0.7);
+
+    --bg-color-dark: hsl(220, 26%, 14%);
+    --bg-color-dark-sections: hsl(218, 23%, 23%);
+    --font-body-color-dark: hsl(204, 45%, 98%, 0.7);
+    --font-heading-color-dark: hsl(204, 45%, 98%);
+    --dark-accent-color-first: hsl(211, 25%, 84%, 0.7);
+    --dark-accent-color-second: hsl(211, 25%, 84%, 0.3);
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+
+body
+{
+    
+  
+    font-size: var(--fs-body);
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+  
+    color: var(--font-body-color);
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.dark
+{
+    background-color: var(--bg-color-dark);
+    color: var(--font-body-color-dark);
+
+}
+
+body.dark > *
+{
+    background-color: var(--bg-color-dark-sections);
+}
+
+
+
+
+.main-section
+{
+    padding: 2rem 0.625rem;
+    border-bottom: 1px solid var(--accent-color-second);
+}
+
+.main-section:nth-child(5)
+{
+    border:none;
+}
+
+.main-section header
+{
+    font-size: var(--fs-current-topic);
+    font-weight: 500;
+}
+
+.main-section code
+{
+    background-color: var(--dark-accent-color-first);
+    padding: 1rem;
+    border-radius: 0.2rem;
+    color: var(--accent-color-second);
+    display: block;
+    margin-top: 0.4rem;
+    white-space: pre-line;
+}
+
+body.dark .main-section 
+{
+    border-bottom: 1px solid hsl(0, 0%, 100%, 0.2);
+}
+
+body.dark .main-section:nth-child(5)
+{
+    border:none;
+}
+
+body.dark .main-section code 
+{
+    background-color: var(--accent-color-second);
+    color: var(--dark-accent-color-first);
+}
+
+#navbar 
+{
+    display: flex;
+    flex-direction: column;
+    padding: 0.625rem;
+    gap: 1rem;  
+}
+
+#navbar header 
+{
+    font-size: var(--fs-main-topic);
+    line-height: 1.2;
+}
+
+#navbar header span:first-child
+{
+    font-size: var(--fs-main-topic);
+    line-height: 1.2;
+}
+
+body.dark #navbar header,body.dark .main-section header 
+{
+    color: var(--font-heading-color-dark);
+}
+
+
+#btnLight, #btnDark
+{
+    font-size: 1rem;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+body.dark #btnLight,body.dark #btnDark 
+{
+    border: 1px solid hsl(0, 0%, 100%, 0.2);
+    color: var(--font-body-color-dark);
+}
+
+
+
+.navs
+{
+    display: flex;
+    flex-direction: column;
+    max-height: 20rem;
+    overflow-y: auto;
+    height: 100%;
+    
+}
+
+.nav-link
+{
+    text-decoration: none;
+    color: inherit;
+    text-size-adjust: var(--fs-nav-links);
+    padding: 0.325rem 0.625rem;
+}
+
+.nav-link.active 
+{
+    background: linear-gradient(to left, var(--accent-color-first),var(--accent-color-second));
+    color: var(--font-heading-color-dark);
+}
+
+.nav-link:active , .nav-link:hover , .nav-link:focus
+{
+    background: linear-gradient(to left, var(--accent-color-first),var(--accent-color-second));
+    color: var(--font-heading-color-dark);
+    animation: onHoverAnimation 200ms linear 0ms 1 normal forwards;
+}
+
+body.dark .nav-link.active 
+{
+    background: linear-gradient(to left,var(--dark-accent-color-first),var(--dark-accent-color-second));
+    color: white;
+}
+
+body.dark .nav-link:hover,body.dark .nav-link:active,body.dark .nav-link:focus 
+{
+    background: linear-gradient(to left,var(--dark-accent-color-first),var(--dark-accent-color-second));
+    color: white;
+}
+
+
+
+@keyframes onHoverAnimation 
+{
+    0% 
+    {
+        opacity: 0%;
+        color: var(--font-heading-color-dark);
+    }
+    
+    100% 
+    {
+        opacity: 100%;
+        background: linear-gradient(to left, var(--accent-color-first),var(--accent-color-second));;
+        color: var(--font-heading-color-dark);
+    }
+}
+
+@media screen and (min-width:48rem)
+{
+    
+    .container
+    {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    #navbar
+    {
+        max-height: 15.5rem;
+        flex: 1;
+        position: sticky;
+        top: 0;
+    }
+
+    #main-doc
+    {
+        flex: 3;
+    }
+
+}

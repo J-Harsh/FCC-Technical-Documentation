@@ -227,6 +227,11 @@ body.dark .nav-link:hover,body.dark .nav-link:active,body.dark .nav-link:focus
         top: 0;
     }
 
+    .navs
+    {
+        overflow-y: visible;
+    }
+
     #main-doc
     {
         flex: 3;

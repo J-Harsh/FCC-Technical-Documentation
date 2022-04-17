@@ -89,6 +89,7 @@ body.dark > *
     display: block;
     margin-top: 0.4rem;
     white-space: pre-line;
+    overflow-x: scroll; 
 }
 
 body.dark .main-section 
@@ -153,7 +154,7 @@ body.dark #btnLight,body.dark #btnDark
 {
     display: flex;
     flex-direction: column;
-    max-height: 12rem;
+    max-height: 15rem;
     overflow-y: auto;
     height: 100%;
     
@@ -210,9 +211,12 @@ body.dark .nav-link:hover,body.dark .nav-link:active,body.dark .nav-link:focus
     }
 }
 
-@media screen and (min-width:48rem)
+@media only screen and (min-width: 768px)
 {
-    
+    body
+    {
+        flex-direction: row;
+    }
     .container
     {
         flex-direction: row;

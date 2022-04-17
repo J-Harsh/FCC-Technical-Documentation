@@ -89,7 +89,6 @@ body.dark > *
     display: block;
     margin-top: 0.4rem;
     white-space: pre-line;
-    overflow-x: scroll; 
 }
 
 body.dark .main-section 
